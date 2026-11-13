@@ -1,6 +1,55 @@
-# Problem Set: Extending Claim Graphs Beyond Economic Theory
+# Problem Set: Text and Images as Data, and Claim Graphs
 
 *Language Modelling for Economics, ECB DG Research, 19–20 November 2026*
+
+The problem set has two parts. Work in groups of two to three. You are encouraged to use AI coding agents throughout; document how you used them and how you checked their output.
+
+# Part 1: Text and images as data
+
+*Adapted from Andrea Ciccarone's problem set for the Zurich Summer School in AI & Applied Economics (2026).*
+
+## Data
+
+Use the dataset provided with this problem set, [`data/news_videos.csv.gz`](data/news_videos.csv.gz). It contains 23,689 YouTube videos posted by two US cable news outlets, Fox News (11,540) and MSNBC (12,149), from January to August 2026, one row per video:
+
+- `video_id`, `url`: identifier and link
+- `outlet`, `channel_id`: which outlet posted it
+- `title`, `description`: the text
+- `published_at`: date and time of posting
+- `view_count`, `like_count`, `comment_count`: engagement
+- `duration_seconds`: video length
+- `days_since_publication`: how long the video has been online
+- `thumbnail_url`: the image the outlet chose to represent the video, fetched live from the URL
+
+Both outlets post 1,350–1,700 videos a month, so the panel is close to balanced in every month. Views accumulate, so control for `days_since_publication` whenever engagement is an outcome. `pandas.read_csv` reads the gzipped file directly. Embedding all 23,689 thumbnails is slow on a laptop or free Colab GPU: start with a random subsample of a few thousand. [`data/build_dataset.py`](data/build_dataset.py) rebuilds or extends the dataset with a free YouTube Data API key.
+
+If you prefer, you may work on your own text or image data instead.
+
+## Questions
+
+1. **Representations.** Represent the titles and descriptions as vectors (bag-of-words, Word2Vec, BERT, sentence transformers, or another method; explain your choice). Represent a subsample of thumbnails as vectors with an image encoder, preferably one aligned with language such as CLIP. Record the exact model versions.
+
+2. **Clustering.** Cluster the text and image representations (PCA, k-means, and so on). Can you name the clusters after reading the videos nearest each centroid? Do the outlets differ in their cluster shares, or over time?
+
+3. **Prediction.** Train a classifier (logistic regression, random forest, gradient boosting) to:
+   a. predict the outlet from the thumbnail alone, reporting held-out accuracy and AUC;
+   b. predict engagement, modelled as log(1 + views), from text, images, and both, controlling for `days_since_publication` and `duration_seconds`.
+
+   Compare text-only, image-only, and joint models. **Warning:** outlets brand their thumbnails with logos, chyrons, and studio sets. A classifier with AUC 0.99 has probably learned to find a logo, not a political style. Inspect the images the model is most and least confident about, and check whether performance survives cropping or masking the branded region.
+
+4. **Zero-shot image measures.** Because CLIP puts images and text in one space, score thumbnails against short descriptions (for example, "a photo of an angry crowd") to build a continuous measure of image content without training data. Report the prompt and check that your result survives reasonable rewordings.
+
+5. **Labelling with an LLM (required).** Using a free model through the OpenRouter API, label a reproducible random sample of 40 videos, with the title and description as the document.
+   a. Define one construct (for example, primary topic, tone, or presence of conflict), with clear labels and an uncertain/other option.
+   b. Write one fixed prompt asking for exactly one label. Save the prompt, the requested model, and the model reported in the API response. Do not put your API key in the notebook.
+   c. Label at least 15 of the same documents by hand. Report agreement, inspect the disagreements, and explain one recurring source of error.
+   d. Use the model labels for one simple comparison, such as topic shares by outlet. Say what it suggests and why the labels still require validation.
+
+6. **Optional: a webpage.** Use an AI coding agent to turn one finding into a small interactive webpage (a "guess the outlet" game, a thumbnail gallery, a cluster explorer). Check that it represents your analysis accurately.
+
+Off-the-shelf models may be unreliable on tasks they were not built for. Validate their output on a subsample you have looked at yourself.
+
+# Part 2: Extending claim graphs beyond economic theory
 
 ## Background
 
@@ -10,7 +59,7 @@ The repository's [`code/claim_graph.py`](code/claim_graph.py) implements these m
 
 ## Task
 
-Extend this approach to a different kind of economic or financial text, where conclusions also rest on chains of premises. Work in groups of two to three. Suggested domains (or choose your own):
+Extend this approach to a different kind of economic or financial text, where conclusions also rest on chains of premises. Suggested domains (or choose your own):
 
 1. **Monetary policy communication.** Map an ECB monetary policy statement or account of a Governing Council meeting: which projections, risk assessments, and judgements support the policy decision and the forward guidance?
 2. **Financial stability reports.** Map the argument from indicators and stress-test results to the stated vulnerabilities and policy recommendations.
@@ -32,9 +81,7 @@ Extend this approach to a different kind of economic or financial text, where co
 
 6. **Limits.** In half a page, discuss what the graph does not capture in your domain, and the main risks of relying on LLM-extracted graphs for policy or investment decisions.
 
-## Deliverables
+# Deliverables
 
-- A short write-up (at most four pages) answering questions 1–6.
-- Your code and JSON graphs in a repository or zip file.
-
-You are encouraged to use AI coding agents throughout. Document how you used them and how you checked their output.
+- A short write-up (at most six pages) covering Part 1 and Part 2.
+- Your code, notebooks, and JSON graphs in a repository or zip file.

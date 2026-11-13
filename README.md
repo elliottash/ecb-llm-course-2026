@@ -41,7 +41,7 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 
 ## Problem set
 
-[Extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)).
+[Part 1: text and images as data (Fox News and MSNBC videos); Part 2: extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)).
 
 ## Readings
 
