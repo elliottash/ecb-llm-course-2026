@@ -1,0 +1,25 @@
+{
+  "paper": "Stylized fragment in the spirit of Rothschild and Stiglitz (1970), Increasing Risk I",
+  "nodes": [
+    {"id": "D001", "type": "definition", "role": "supporting", "text": "G is F plus noise"},
+    {"id": "D003", "type": "definition", "role": "supporting", "text": "Mean-preserving spread"},
+    {"id": "R001", "type": "formal condition", "role": "supporting", "text": "Integral conditions on F and G"},
+    {"id": "SC001", "type": "scope condition", "role": "supporting", "text": "Distributions on a bounded interval"},
+    {"id": "A001", "type": "assumption", "role": "supporting", "text": "Expected-utility agents"},
+    {"id": "L001", "type": "lemma", "role": "supporting", "text": "Lemma 1, finite case"},
+    {"id": "L002", "type": "lemma", "role": "supporting", "text": "Approximation by finite distributions"},
+    {"id": "P003", "type": "proposition", "role": "major", "text": "Approximation by spread pairs"},
+    {"id": "P006", "type": "proposition", "role": "major", "text": "Integral conditions imply noise"},
+    {"id": "P007", "type": "proposition", "role": "headline", "text": "Equivalence of the three riskiness criteria"},
+    {"id": "P009", "type": "proposition", "role": "headline", "text": "Higher risk does not always mean higher variance"},
+    {"id": "C001", "type": "substantive claim", "role": "headline", "text": "Every risk-averse agent prefers F to G"}
+  ],
+  "routes": [
+    {"id": "E006", "sources": ["R001", "D001", "D003", "SC001"], "target": "L001"},
+    {"id": "E008", "sources": ["L001", "L002"], "target": "P003"},
+    {"id": "E009", "sources": ["P003", "R001"], "target": "P006"},
+    {"id": "E010", "sources": ["P006", "A001", "D001"], "target": "P007"},
+    {"id": "E011", "sources": ["D003", "SC001"], "target": "P009"},
+    {"id": "E012", "sources": ["P007", "A001"], "target": "C001"}
+  ]
+}

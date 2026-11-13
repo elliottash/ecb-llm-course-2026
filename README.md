@@ -35,7 +35,19 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 - **Working with AI agents:** coding agents for data collection, cleaning, and analysis; agentic research workflows and their failure modes.
 - **Software development with AI:** building research tools and pipelines with AI assistance.
 - **Hands-on:** labelling a sample of documents with an LLM API, validating a subset by hand, inspecting disagreements, and using the labels in a substantive comparison.
+- **Application: mapping economic theory with AI.** Representing a theory paper as a claim graph of assumptions, intermediate results, and conclusions; measuring yield, depth, and fragility; auditing errors and assessing repairs (Ash, Ciccarone, and Galletta 2026). Hands-on: [`code/claim_graph.py`](code/claim_graph.py) computes the paper's structure and fragility measures on an example graph and extracts a graph from a paper with an LLM.
 - **Wrap-up:** open questions and discussion.
+
+## Readings
+
+- Ash, E., A. Ciccarone, and S. Galletta (2026). "Mapping Economic Theory with AI." Working paper.
+- Ash, E., and S. Hansen (2023). "Text Algorithms in Economics." *Annual Review of Economics* 15: 659–688.
+- Gentzkow, M., B. Kelly, and M. Taddy (2019). "Text as Data." *Journal of Economic Literature* 57(3): 535–574.
+- Mikolov, T., K. Chen, G. Corrado, and J. Dean (2013). "Efficient Estimation of Word Representations in Vector Space." arXiv:1301.3781.
+- Vaswani, A., et al. (2017). "Attention Is All You Need." *NeurIPS*.
+- Devlin, J., M.-W. Chang, K. Lee, and K. Toutanova (2019). "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." *NAACL*.
+- Ouyang, L., et al. (2022). "Training Language Models to Follow Instructions with Human Feedback." *NeurIPS*.
+- Korinek, A. (2023). "Generative AI for Economic Research: Use Cases and Implications for Economists." *Journal of Economic Literature* 61(4): 1281–1317.
 
 ## Materials
 
