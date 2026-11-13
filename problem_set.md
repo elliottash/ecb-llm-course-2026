@@ -10,9 +10,9 @@ The problem set has two parts. Work in groups of two to three. You are encourage
 
 Bring your own dataset: a collection of documents relevant to your work, such as central bank speeches or statements, news articles, firm filings, earnings call transcripts, survey responses, or social media posts. Aim for at least a few thousand documents with some metadata (date, source, author, or an outcome) so that you can compare groups or track change over time. Use only data you are allowed to share with your group and to process with external AI services.
 
-If you do not have a suitable dataset, use our [news videos dataset](https://github.com/elliottash/zrh_ai_econ/blob/main/assignments/news_videos.csv.gz): titles and descriptions of 23,689 YouTube videos posted by Fox News and MSNBC from January to August 2026, with dates and engagement counts.
-
 Describe the dataset: where it comes from, how you collected and cleaned it, what one observation is, and its main descriptive statistics.
+
+If you do not have a suitable dataset, use our [news videos dataset](https://github.com/elliottash/zrh_ai_econ/blob/main/assignments/news_videos.csv.gz): titles and descriptions of 23,689 YouTube videos posted by Fox News and MSNBC from January to August 2026, with dates and engagement counts.
 
 ## Questions
 
