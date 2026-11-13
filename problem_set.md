@@ -42,7 +42,7 @@ The repository's [`code/claim_graph.py`](code/claim_graph.py) implements these m
 
 ## Task
 
-Extend this approach to a different kind of economic or financial text, where conclusions also rest on chains of premises. Suggested domains (or choose your own):
+Extend this approach to a different kind of economic or financial text, where conclusions also rest on chains of premises. Work in groups of two to three. Suggested domains (or choose your own):
 
 1. **Monetary policy communication.** Map an ECB monetary policy statement or account of a Governing Council meeting: which projections, risk assessments, and judgements support the policy decision and the forward guidance?
 2. **Financial stability reports.** Map the argument from indicators and stress-test results to the stated vulnerabilities and policy recommendations.
