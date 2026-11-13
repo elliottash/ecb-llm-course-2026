@@ -1,26 +1,26 @@
-# Problem Set: Text and Images as Data, and Claim Graphs
+# Problem Set: Text as Data and Claim Graphs
 
 *Language Modelling for Economics, ECB DG Research, 19–20 November 2026*
 
 The problem set has two parts. Work in groups of two to three. You are encouraged to use AI coding agents throughout; document how you used them and how you checked their output.
 
-# Part 1: Text and images as data
+# Part 1: Text as data
 
 ## Data
 
-Bring your own dataset: a collection of documents relevant to your work, such as central bank speeches or statements, news articles, firm filings, earnings call transcripts, survey responses, or social media posts. Images are welcome if your documents have them (for example, charts, thumbnails, or scanned pages). Aim for at least a few thousand documents with some metadata (date, source, author, or an outcome) so that you can compare groups or track change over time. Use only data you are allowed to share with your group and to process with external AI services.
+Bring your own dataset: a collection of documents relevant to your work, such as central bank speeches or statements, news articles, firm filings, earnings call transcripts, survey responses, or social media posts. Aim for at least a few thousand documents with some metadata (date, source, author, or an outcome) so that you can compare groups or track change over time. Use only data you are allowed to share with your group and to process with external AI services.
 
 Describe the dataset: where it comes from, how you collected and cleaned it, what one observation is, and its main descriptive statistics.
 
 ## Questions
 
-1. **Representations.** Represent your documents as vectors (bag-of-words, Word2Vec, BERT, sentence transformers, or another method; explain your choice). If you have images, represent them with an image encoder, preferably one aligned with language such as CLIP. Record the exact model versions.
+1. **Representations.** Represent your documents as vectors (bag-of-words, Word2Vec, BERT, sentence transformers, or another method; explain your choice). Record the exact model versions.
 
 2. **Clustering.** Cluster the representations (PCA, k-means, and so on). Can you name the clusters after reading the documents nearest each centroid? Do cluster shares differ across groups in your metadata, or over time?
 
-3. **Prediction.** Train a model (logistic regression, random forest, gradient boosting) to predict a variable in your metadata, such as the source, the period, or an outcome, from the document representations. Report held-out performance. Inspect what drives the predictions before you believe them: a model can score well by finding a superficial marker (a template phrase, a logo, a date format) rather than the content you care about.
+3. **Prediction.** Train a model (logistic regression, random forest, gradient boosting) to predict a variable in your metadata, such as the source, the period, or an outcome, from the document representations. Report held-out performance. Inspect what drives the predictions before you believe them: a model can score well by finding a superficial marker (a template phrase, a signature, a date format) rather than the content you care about.
 
-4. **Zero-shot measures.** Score documents against short descriptions of a concept (with embedding similarity, or with CLIP for images) to build a continuous measure without training data. Report the descriptions you used and check that your result survives reasonable rewordings.
+4. **Zero-shot measures.** Score documents against short descriptions of a concept (for example, with embedding similarity) to build a continuous measure without training data. Report the descriptions you used and check that your result survives reasonable rewordings.
 
 5. **Labelling with an LLM (required).** Using a model through an API (for example, a free model on OpenRouter), label a reproducible random sample of 40 documents.
    a. Define one construct (for example, topic, tone, or stance), with clear labels and an uncertain/other option.
