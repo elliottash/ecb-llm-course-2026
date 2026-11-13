@@ -8,42 +8,27 @@ The problem set has two parts. Work in groups of two to three. You are encourage
 
 ## Data
 
-Use the dataset provided with this problem set, [`data/news_videos.csv.gz`](data/news_videos.csv.gz). It contains 23,689 YouTube videos posted by two US cable news outlets, Fox News (11,540) and MSNBC (12,149), from January to August 2026, one row per video:
+Bring your own dataset: a collection of documents relevant to your work, such as central bank speeches or statements, news articles, firm filings, earnings call transcripts, survey responses, or social media posts. Images are welcome if your documents have them (for example, charts, thumbnails, or scanned pages). Aim for at least a few thousand documents with some metadata (date, source, author, or an outcome) so that you can compare groups or track change over time. Use only data you are allowed to share with your group and to process with external AI services.
 
-- `video_id`, `url`: identifier and link
-- `outlet`, `channel_id`: which outlet posted it
-- `title`, `description`: the text
-- `published_at`: date and time of posting
-- `view_count`, `like_count`, `comment_count`: engagement
-- `duration_seconds`: video length
-- `days_since_publication`: how long the video has been online
-- `thumbnail_url`: the image the outlet chose to represent the video, fetched live from the URL
-
-Both outlets post 1,350–1,700 videos a month, so the panel is close to balanced in every month. Views accumulate, so control for `days_since_publication` whenever engagement is an outcome. `pandas.read_csv` reads the gzipped file directly. Embedding all 23,689 thumbnails is slow on a laptop or free Colab GPU: start with a random subsample of a few thousand. [`data/build_dataset.py`](data/build_dataset.py) rebuilds or extends the dataset with a free YouTube Data API key.
-
-If you prefer, you may work on your own text or image data instead.
+Describe the dataset: where it comes from, how you collected and cleaned it, what one observation is, and its main descriptive statistics.
 
 ## Questions
 
-1. **Representations.** Represent the titles and descriptions as vectors (bag-of-words, Word2Vec, BERT, sentence transformers, or another method; explain your choice). Represent a subsample of thumbnails as vectors with an image encoder, preferably one aligned with language such as CLIP. Record the exact model versions.
+1. **Representations.** Represent your documents as vectors (bag-of-words, Word2Vec, BERT, sentence transformers, or another method; explain your choice). If you have images, represent them with an image encoder, preferably one aligned with language such as CLIP. Record the exact model versions.
 
-2. **Clustering.** Cluster the text and image representations (PCA, k-means, and so on). Can you name the clusters after reading the videos nearest each centroid? Do the outlets differ in their cluster shares, or over time?
+2. **Clustering.** Cluster the representations (PCA, k-means, and so on). Can you name the clusters after reading the documents nearest each centroid? Do cluster shares differ across groups in your metadata, or over time?
 
-3. **Prediction.** Train a classifier (logistic regression, random forest, gradient boosting) to:
-   a. predict the outlet from the thumbnail alone, reporting held-out accuracy and AUC;
-   b. predict engagement, modelled as log(1 + views), from text, images, and both, controlling for `days_since_publication` and `duration_seconds`.
+3. **Prediction.** Train a model (logistic regression, random forest, gradient boosting) to predict a variable in your metadata, such as the source, the period, or an outcome, from the document representations. Report held-out performance. Inspect what drives the predictions before you believe them: a model can score well by finding a superficial marker (a template phrase, a logo, a date format) rather than the content you care about.
 
-   Compare text-only, image-only, and joint models. **Warning:** outlets brand their thumbnails with logos, chyrons, and studio sets. A classifier with AUC 0.99 has probably learned to find a logo, not a political style. Inspect the images the model is most and least confident about, and check whether performance survives cropping or masking the branded region.
+4. **Zero-shot measures.** Score documents against short descriptions of a concept (with embedding similarity, or with CLIP for images) to build a continuous measure without training data. Report the descriptions you used and check that your result survives reasonable rewordings.
 
-4. **Zero-shot image measures.** Because CLIP puts images and text in one space, score thumbnails against short descriptions (for example, "a photo of an angry crowd") to build a continuous measure of image content without training data. Report the prompt and check that your result survives reasonable rewordings.
-
-5. **Labelling with an LLM (required).** Using a free model through the OpenRouter API, label a reproducible random sample of 40 videos, with the title and description as the document.
-   a. Define one construct (for example, primary topic, tone, or presence of conflict), with clear labels and an uncertain/other option.
+5. **Labelling with an LLM (required).** Using a model through an API (for example, a free model on OpenRouter), label a reproducible random sample of 40 documents.
+   a. Define one construct (for example, topic, tone, or stance), with clear labels and an uncertain/other option.
    b. Write one fixed prompt asking for exactly one label. Save the prompt, the requested model, and the model reported in the API response. Do not put your API key in the notebook.
    c. Label at least 15 of the same documents by hand. Report agreement, inspect the disagreements, and explain one recurring source of error.
-   d. Use the model labels for one simple comparison, such as topic shares by outlet. Say what it suggests and why the labels still require validation.
+   d. Use the model labels for one simple comparison. Say what it suggests and why the labels still require validation.
 
-6. **Optional: a webpage.** Use an AI coding agent to turn one finding into a small interactive webpage (a "guess the outlet" game, a thumbnail gallery, a cluster explorer). Check that it represents your analysis accurately.
+6. **Optional: a webpage.** Use an AI coding agent to turn one finding into a small interactive webpage. Check that it represents your analysis accurately.
 
 Off-the-shelf models may be unreliable on tasks they were not built for. Validate their output on a subsample you have looked at yourself.
 

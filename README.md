@@ -12,7 +12,7 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 
 ## Preparation
 
-1. Bring a laptop suitable for coding.
+1. Bring a laptop suitable for coding, and a dataset of documents relevant to your work for the problem set.
 2. Have access to at least one capable AI service (e.g., ChatGPT Plus or Claude Pro, or an institutional equivalent).
 3. If possible, install a coding agent (Codex and/or Claude Code), Git, and a working Python/Jupyter environment.
 
@@ -41,7 +41,7 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 
 ## Problem set
 
-[Part 1: text and images as data (Fox News and MSNBC videos); Part 2: extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)).
+[Part 1: text and images as data, on your own dataset; Part 2: extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)).
 
 ## Readings
 
