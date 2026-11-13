@@ -48,8 +48,5 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 - Ash, E., A. Ciccarone, and S. Galletta (2026). "Mapping Economic Theory with AI." Working paper.
 - Ash, E., and S. Hansen (2023). "Text Algorithms in Economics." *Annual Review of Economics* 15: 659–688.
 - Gentzkow, M., B. Kelly, and M. Taddy (2019). "Text as Data." *Journal of Economic Literature* 57(3): 535–574.
-- Mikolov, T., K. Chen, G. Corrado, and J. Dean (2013). "Efficient Estimation of Word Representations in Vector Space." arXiv:1301.3781.
-- Vaswani, A., et al. (2017). "Attention Is All You Need." *NeurIPS*.
-- Devlin, J., M.-W. Chang, K. Lee, and K. Toutanova (2019). "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." *NAACL*.
-- Ouyang, L., et al. (2022). "Training Language Models to Follow Instructions with Human Feedback." *NeurIPS*.
-- Korinek, A. (2023). "Generative AI for Economic Research: Use Cases and Implications for Economists." *Journal of Economic Literature* 61(4): 1281–1317.
+- Ludwig, J., S. Mullainathan, and A. Rambachan (2025). "Large Language Models: An Applied Econometric Framework." NBER Working Paper 33344.
+- Asirvatham, H., E. Mokski, and A. Shleifer (2026). "GPT as a Measurement Tool." NBER Working Paper 34834.
