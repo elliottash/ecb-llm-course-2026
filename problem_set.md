@@ -6,8 +6,6 @@ The problem set has two parts. Work in groups of two to three. You are encourage
 
 # Part 1: Text and images as data
 
-*Adapted from Andrea Ciccarone's problem set for the Zurich Summer School in AI & Applied Economics (2026).*
-
 ## Data
 
 Use the dataset provided with this problem set, [`data/news_videos.csv.gz`](data/news_videos.csv.gz). It contains 23,689 YouTube videos posted by two US cable news outlets, Fox News (11,540) and MSNBC (12,149), from January to August 2026, one row per video:

@@ -53,7 +53,3 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 - Devlin, J., M.-W. Chang, K. Lee, and K. Toutanova (2019). "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding." *NAACL*.
 - Ouyang, L., et al. (2022). "Training Language Models to Follow Instructions with Human Feedback." *NeurIPS*.
 - Korinek, A. (2023). "Generative AI for Economic Research: Use Cases and Implications for Economists." *Journal of Economic Literature* 61(4): 1281–1317.
-
-## Materials
-
-Slides and notebooks adapted from the Zurich Summer School in AI & Applied Economics (2026): https://zrh-ai-econ.com

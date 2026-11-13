@@ -1,5 +1,5 @@
 {
-  "paper": "Stylized fragment in the spirit of Rothschild and Stiglitz (1970), Increasing Risk I",
+  "paper": "Example: Rothschild and Stiglitz (1970), Increasing Risk I (simplified)",
   "nodes": [
     {"id": "D001", "type": "definition", "role": "supporting", "text": "G is F plus noise"},
     {"id": "D003", "type": "definition", "role": "supporting", "text": "Mean-preserving spread"},

@@ -1,6 +1,6 @@
 """Claim graphs for economic theory papers.
 
-A teaching implementation of the framework in Ash, Ciccarone and Galletta (2026),
+Implements the framework in Ash, Ciccarone and Galletta (2026),
 "Mapping Economic Theory with AI". A paper's argument is a directed hypergraph:
 nodes are statements, and each route (hyperedge) derives one target from a set of
 sources used jointly (AND). Several routes into one target are alternatives (OR).
@@ -121,8 +121,7 @@ Return JSON only: {"nodes": [{"id", "type", "role", "text"}], "routes": [{"id", 
 
 
 def extract(paper_txt, out_json, model="anthropic/claude-sonnet-5.5"):
-    """One-shot extraction. The paper uses an agentic, multi-pass system with checks;
-    this single call is a classroom approximation."""
+    """Extract a claim graph from a paper's text with one LLM call."""
     from openai import OpenAI
     client = OpenAI(base_url="https://openrouter.ai/api/v1", api_key=os.environ["OPENROUTER_API_KEY"])
     text = open(paper_txt).read()[:200_000]
