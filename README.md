@@ -20,6 +20,7 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 ### From text to embeddings
 
 - **Introduction:** AI and the empirical toolkit of economics; text, images, and other unstructured data as economic data.
+- **Introduction to economics with AI agents:** what coding and research agents can do for economists today; a live demo of an agent carrying out a small empirical task end to end, and how to supervise and check its work.
 - **Machine-learning basics:** supervised and unsupervised learning, prediction versus inference, and validation.
 - **Text as data:** tokenization, document-term representations, and dictionary and classifier approaches.
 - **Embeddings:** Word2Vec, sentence embeddings, similarity, and clustering for measurement.
@@ -37,6 +38,10 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 - **Hands-on:** labelling a sample of documents with an LLM API, validating a subset by hand, inspecting disagreements, and using the labels in a substantive comparison.
 - **Application: mapping economic theory with AI.** Representing a theory paper as a claim graph of assumptions, intermediate results, and conclusions; measuring yield, depth, and fragility; auditing errors and assessing repairs (Ash, Ciccarone, and Galletta 2026). Hands-on: [`code/claim_graph.py`](code/claim_graph.py) computes the paper's structure and fragility measures on an example graph and extracts a graph from a paper with an LLM.
 - **Wrap-up:** open questions and discussion.
+
+## Problem set
+
+[Extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)).
 
 ## Readings
 
