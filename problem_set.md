@@ -2,7 +2,7 @@
 
 *Language Modelling for Economics, ECB DG Research, 19–20 November 2026*
 
-The problem set has two parts. Work in groups of two to three. You are encouraged to use AI coding agents throughout; document how you used them and how you checked their output.
+The problem set is optional. Participants who turn it in will receive feedback and an example solution. The problem set has two parts. Work in groups of two to three. You are encouraged to use AI coding agents throughout; document how you used them and how you checked their output.
 
 # Part 1: Text as data
 
@@ -67,6 +67,9 @@ Extend this approach to a different kind of economic or financial text, where co
 6. **Limits.** In half a page, discuss what the graph does not capture in your domain, and the main risks of relying on LLM-extracted graphs for policy or investment decisions.
 
 # Deliverables
+
+Send your submission to Elliott Ash to receive feedback and an example solution.
+
 
 - A short write-up (at most six pages) covering Part 1 and Part 2.
 - Your code, notebooks, and JSON graphs in a repository or zip file.

@@ -41,7 +41,7 @@ Recent advances in artificial intelligence are reshaping both the economy and th
 
 ## Problem set
 
-[Part 1: text as data, on your own dataset; Part 2: extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)).
+[Part 1: text as data, on your own dataset; Part 2: extending claim graphs to another field of economics or finance](problem_set.md) ([PDF](problem_set.pdf)). Optional; participants who turn it in receive feedback and an example solution.
 
 ## Readings
 
